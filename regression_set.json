@@ -1,0 +1,145 @@
+{
+  "dataset_version": "2024-11-08.v2",
+  "description": "Frozen question/answer regression set. Every prompt, chunking, or retrieval change is scored against this file before merge. Add cases; do not silently edit existing ones -- bump dataset_version instead so score history stays interpretable.",
+  "cases": [
+    {
+      "id": "retention-audit-logs",
+      "question": "How long must system audit logs be retained?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["18", "eighteen", "months"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "retention-audit-logs-hot-storage",
+      "question": "How much audit log data must stay searchable in hot storage?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["90", "ninety", "days"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "retention-financial",
+      "question": "What is the minimum retention period for financial records?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["seven", "7", "years"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "retention-customer-deletion",
+      "question": "When must customer personal data be deleted after account closure?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["30", "thirty", "days"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "legal-hold-suspension",
+      "question": "How quickly must automated deletion jobs be suspended after a litigation hold notice?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["24", "twenty-four", "hours"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "access-review-frequency",
+      "question": "How often must access reviews be performed for Critical systems?",
+      "expected_doc_ids": ["access_control_standard"],
+      "expected_keywords": ["quarterly"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "access-revocation-timeline",
+      "question": "How quickly must access be revoked after a termination?",
+      "expected_doc_ids": ["access_control_standard"],
+      "expected_keywords": ["24", "twenty-four", "hours"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "privileged-access-duration",
+      "question": "What is the maximum duration of a privileged access elevation?",
+      "expected_doc_ids": ["access_control_standard"],
+      "expected_keywords": ["eight", "8", "hours"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "password-length",
+      "question": "What is the minimum password length requirement?",
+      "expected_doc_ids": ["access_control_standard"],
+      "expected_keywords": ["14", "fourteen", "characters"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "breach-notification-window",
+      "question": "How long do we have to notify the supervisory authority of a personal data breach?",
+      "expected_doc_ids": ["incident_response_plan"],
+      "expected_keywords": ["72", "seventy-two", "hours"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "sev1-escalation",
+      "question": "How quickly must a Severity 1 incident be escalated to the Incident Commander?",
+      "expected_doc_ids": ["incident_response_plan"],
+      "expected_keywords": ["15", "fifteen", "minutes"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "post-incident-review",
+      "question": "When must a post-incident review be completed?",
+      "expected_doc_ids": ["incident_response_plan"],
+      "expected_keywords": ["10", "ten", "business days"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "shared-accounts",
+      "question": "Are shared accounts permitted?",
+      "expected_doc_ids": ["access_control_standard"],
+      "expected_keywords": ["prohibited", "break-glass"],
+      "must_be_grounded": true,
+      "category": "policy"
+    },
+    {
+      "id": "exception-expiry",
+      "question": "How long does an approved exception to the retention policy remain valid?",
+      "expected_doc_ids": ["data_retention_policy"],
+      "expected_keywords": ["12", "twelve", "months"],
+      "must_be_grounded": true,
+      "category": "lookup"
+    },
+    {
+      "id": "abstain-vacation-policy",
+      "question": "How many vacation days do employees accrue each year?",
+      "expected_doc_ids": [],
+      "expected_keywords": [],
+      "must_abstain": true,
+      "must_be_grounded": false,
+      "category": "abstention"
+    },
+    {
+      "id": "abstain-stock-price",
+      "question": "What was the company's share price at the end of last quarter?",
+      "expected_doc_ids": [],
+      "expected_keywords": [],
+      "must_abstain": true,
+      "must_be_grounded": false,
+      "category": "abstention"
+    },
+    {
+      "id": "abstain-hipaa",
+      "question": "What are our obligations under HIPAA for protected health information?",
+      "expected_doc_ids": [],
+      "expected_keywords": [],
+      "must_abstain": true,
+      "must_be_grounded": false,
+      "category": "abstention"
+    }
+  ]
+}
